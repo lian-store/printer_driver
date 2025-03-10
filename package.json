@@ -41,5 +41,29 @@
   "devDependencies": {
     "electron": "^28.1.4",
     "electron-builder": "^24.9.1"
+  },
+  "build": {
+    "appId": "com.7dollar.printerdriver",
+    "productName": "7Dollar Printer Driver",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "**/*",
+      "!**/*.png",
+      "!**/qrcode${/*}"
+    ],
+    "win": {
+      "target": "nsis",
+      "icon": "icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "7Dollar Printer Driver",
+      "runAfterFinish": true
+    }
   }
 }
